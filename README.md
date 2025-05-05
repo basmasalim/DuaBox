@@ -1,8 +1,5 @@
 **DuaBox** is a simple and elegant web app that allows users to write, save, and manage their favorite Duas (supplications) — all in one place. Built with HTML, CSS, JavaScript, and powered by a local JSON server for backend functionality.
 
-### 🌐 Live Demo
-🔗 [Click here to view the live project](https://basmasalim.github.io/DuaBox/)
-
 ## 📸 Preview
 
 ![image](https://github.com/user-attachments/assets/75bcadfc-c597-4798-afaf-fab6950337ca)
