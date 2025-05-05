@@ -16,30 +16,33 @@ editBtn.addEventListener("click", editData);
 
 // ? Post
 async function postData() {
-  if (duaInput.value.trim() === "") {
-    Swal.fire("من فضلك، اكتب دعاء قبل الحفظ ❤️");
-    return;
-  }
-  await getData();
-  const newId =
-    allDuas.length > 0
-      ? Math.max(...allDuas.map((d) => parseInt(d.id))) + 1
-      : 1;
-  loading.classList.remove("d-none");
-  await fetch(`http://localhost:3000/DuaBox`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      id: newId.toString(),
-      dua: duaInput.value,
-    }),
-  });
+    if (duaInput.value.trim() === "") {
+        Swal.fire("من فضلك، اكتب دعاء قبل الحفظ ❤️");
+        return;
+      }
+      await getData();
+      
+const newId =
+allDuas.length > 0 ? Math.max(...allDuas.map((d) => parseInt(d.id))) + 1 : 1;
+  try {
+    loading.classList.remove("d-none");
+    await fetch(`http://localhost:3000/DuaBox`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: newId.toString(),
+        dua: duaInput.value,
+      }),
+    });
 
-  clearForm();
-  displayData();
-  loading.classList.add("d-none");
+    clearForm();
+    displayData();
+    loading.classList.add("d-none");
+  } catch (error) {
+    Swal.fire("Cannot post data");
+  }
 }
 
 // ? Get
@@ -112,3 +115,4 @@ async function editData() {
   clearForm();
   loading.classList.add("d-none");
 }
+
