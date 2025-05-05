@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DuaBox" />
+    <meta name="keywords" content="DuaBox , دعاء" />
+    <meta name="author" content="BASMA SALIM" />
+    <link
+      rel="shortcut icon"
+      href="assets/icon/favicon.ico"
+      type="image/x-icon"
+    />
+    <!--? ===============  BootStrap5.3 =============== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <!--? ===============  Main Css File =============== -->
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>DuaBox</title>
+  </head>
+  <body class="bg-light">
+    <main class="container">
+      <nav>
+        <div class="title d-flex justify-content-between align-items-center">
+          <h2 class="fs-1"><span class="text-success">صندوق</span> الأدعية</h2>
+          <h1 class="fs-1">Dua<span class="text-success">Box</span></h1>
+        </div>
+        <div class="title-des text-center">
+          <p class="fs-4 py-0 my-0">أدعيتك المفضلة في مكان واحد</p>
+          <p class="fs-4">Your favorite Dua in one place</p>
+        </div>
+      </nav>
+      <section class="w-75 mx-auto">
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Write your favorite Dua"
+            id="duaInput"
+            style="height: 50px"
+          ></textarea>
+          <label for="duaInput"> Write your favorite Dua </label>
+        </div>
+        <!-- save button -->
+        <button class="btn btn-success mt-3 mx-auto d-block" id="saveBtn">
+          ❤️<span class="fs-4">Save</span>
+        </button>
+        <button
+          class="btn btn-outline-success mt-3 mx-auto d-none"
+          id="editBtn"
+        >
+          ❤️<span class="fs-4">Edit</span>
+        </button>
+      </section>
+      <section class="mt-4">
+        <div class="masonry" id="dualist"></div>
+      </section>
+    </main>
+
+    <!-- loading -->
+    <div class="loading d-none" id="loading">
+      <div class="loader"></div>
+    </div>
+
+    <script src="assets/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

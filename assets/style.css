@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap");
+:root {
+  --main-color: #0e700e;
+  --light-color: #f0f3f2;
+}
+
+body {
+  font-family: "Lateef", serif;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light-color);
+}
+
+/* &=============================> Form */
+.form-control:focus {
+  border-color: var(--main-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+}
+
+/* &=============================> Masonry */
+.masonry {
+  column-count: 4;
+  column-gap: 1rem;
+}
+
+.box {
+  background: #fff;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* &=============================> Media queries */
+@media (max-width: 992px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+/* &=============================> Loading */
+.loading {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: #272b30e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  position: relative;
+  width: 100px;
+  aspect-ratio: 1;
+  background: linear-gradient(#dc1818 0 0) bottom/100% 0% no-repeat #ccc;
+  -webkit-mask: 
+    radial-gradient(circle at 60% 65%, #000 62%, #0000 65%) top left, 
+    radial-gradient(circle at 40% 65%, #000 62%, #0000 65%) top right, 
+    linear-gradient(to bottom left, #000 42%,#0000 43%) bottom left , 
+    linear-gradient(to bottom right,#000 42%,#0000 43%) bottom right;
+  -webkit-mask-size: 50% 50%;
+  -webkit-mask-repeat: no-repeat;
+  animation: l19 2s infinite linear;
+}
+
+@keyframes l19 {
+    90%,100% {background-size:100% 100%}
+}
+
+
+/* &=============================> Modal Overlay  */
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+  background: initial;
+  background-color: #bb2d3b;
+}
