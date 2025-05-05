@@ -26,7 +26,7 @@ async function postData() {
       ? Math.max(...allDuas.map((d) => parseInt(d.id))) + 1
       : 1;
   loading.classList.remove("d-none");
-  await fetch(`http://localhost:3000/DuaBox`, {
+  await fetch(`https://basmasalim.github.io/DuaBox/assets/db.json`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -44,7 +44,7 @@ async function postData() {
 
 // ? Get
 async function getData() {
-  let response = await fetch(`http://localhost:3000/DuaBox`);
+  let response = await fetch(`https://basmasalim.github.io/DuaBox/assets/db.json`);
   let data = await response.json();
   allDuas = data;
 }
@@ -78,7 +78,7 @@ function clearForm() {
 async function deleteData(id) {
   loading.classList.remove("d-none");
 
-  await fetch(`http://localhost:3000/DuaBox/${id}`, {
+  await fetch(`https://basmasalim.github.io/DuaBox/assets/db.json/${id}`, {
     method: "DELETE",
   });
   displayData();
@@ -97,7 +97,7 @@ function preEditData(index, id) {
 async function editData() {
   loading.classList.remove("d-none");
 
-  await fetch(`http://localhost:3000/DuaBox/${duaToBeEdit}`, {
+  await fetch(`https://basmasalim.github.io/DuaBox/assets/db.json/${duaToBeEdit}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
